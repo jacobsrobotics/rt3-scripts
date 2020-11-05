@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DEVKEY="MjJGRDM3MjItNDNBNS00NUMzLTk0QzItN0E0NkRBN0EzRTMw"
+USERNAME="delpierro710@gmail.com"
+PASSWORD="gifko.10"
+
+curl -s -X POST -H developerkey:"$DEVKEY" -H Content-Type:application/json \
+    -H Cache-Control:no-cache -d "{ \"username\":\"$USERNAME\", \
+    \"password\":\"$PASSWORD\" }" https://api.remot3.it/apv/v27/user/login | jq '.token'
